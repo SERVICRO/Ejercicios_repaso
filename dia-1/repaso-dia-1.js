@@ -17,8 +17,37 @@
  *      anotó 97, 134 y 105 puntos respectivamente en los últimos
  *      3 partidos. Repite los pasos 1 y 2 incorporando al equipo
  *      de María.
- *
  */
+const saraTeam = [89, 120, 103];
+const lauraTeam = [116, 94, 123];
+const mariaTeam = [97, 134, 105];
+
+const getAverage = scores => {
+  const totalScore = scores.reduce((accumulator, currentValue) => {
+    return accumulator + currentValue;
+  });
+  return totalScore / scores.length;
+};
+console.log(getAverage(saraTeam));
+console.log(getAverage(lauraTeam));
+
+const saraAverage = getAverage(saraTeam);
+const lauraAverage = getAverage(lauraTeam);
+const mariaAverage = getAverage(mariaTeam);
+
+if (saraTeam > lauraTeam && saraTeam > mariaTeam) {
+  console.log(
+    `El equipo de Sara tiene una media de ${saraAverage} puntos y el equipo de Laura tiene una media de ${lauraAverage} puntos. El equipo de Maria tiene ${mariaAverage} puntos. Por lo tanto ha ganado el equipo de Sara `
+  );
+} else if (lauraTeam > saraTeam && lauraTeam > mariaTeam) {
+  console.log(
+    `El equipo de Sara tiene una media de ${saraAverage} puntos y el equipo de Laura tiene una media de ${lauraAverage} puntos. El equipo de Maria tiene ${mariaAverage} puntos. Por lo tanto ha ganado el equipo de Laura `
+  );
+} else {
+  console.log(
+    `El equipo de Sara tiene una media de ${saraAverage} puntos y el equipo de Laura tiene una media de ${lauraAverage} puntos. El equipo de Maria tiene ${mariaAverage} puntos. Por lo tanto ha ganado el equipo de Maria `
+  );
+}
 
 /**
  * ###################################
